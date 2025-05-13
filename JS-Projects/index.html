@@ -12,14 +12,37 @@
 </head>
 <body>
     <div id="main">
-        <div id="home">
+        <!-- <div id="home">
             <div id="nav">
                 <img src="data:image/png;base64,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" alt="">
-            </div>
-            <div id="right">
+                   <div id="right">
                 <a href="">our showreel</a>
                 <a href="">menu</a>
                 <i class="ri-menu-line"></i>
+            </div>
+            </div>
+            <div id="homemain">
+                <h5>We make it happen.</h5>
+                <div id="heading">
+                    <h1>Websites</h1>
+                    <h1>Apps</h1>
+                    <h1>Branding</h1>
+                </div>
+            </div>
+            <div id="homelast">
+                <p>Leading ditital agency with solid design development <br> expertise.we build 
+                    readymade websites, mobile <br> applications, and elaborate online business service
+                </p>
+            </div> -->
+            <div id="featured">
+                <div class="fheading">
+                    <h1>featured</h1>
+                    <h1>projects</h1>
+            </div>
+            </div>
+            <div id="featuredimages">
+                <div id="fleft"></div>
+                <div id="fright"></div>
             </div>
         </div>
     </div>
