@@ -96,13 +96,25 @@ html,body{
     color:transparent;
     -webkit-text-stroke: 1px #000;
 }
-#featuredimages{
+#fimages{
     width:100%;
-    padding:5vw 10vw;
     min-height:100vh;
-    margin-top:20px;
-    border :2px solid red;
+    padding:0vw 15vw;
+    margin-top:5vw;
+    border: 2px solid red;
+    justify-content: space-between;
+    display: flex;
 }
 #fleft{
-    width:50%;
+    width:45%;
+    min-height: inherit;
+    border:1px solid blue;
+}
+#fright{
+    width:45%;
+    min-height: inherit;
+    border:1px solid green;
+}
+#fright #image{
+    width:100%;
 }
