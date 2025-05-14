@@ -84,9 +84,10 @@ html,body{
     color: #fff;
 }
 
-#featured{
-    padding: 10vw 15vw;
+#featured {
+    padding: 5vw 10vw; /* Reduce padding */
 }
+
 #featured h1{
     line-height:1;
     font-size: 4vw;
@@ -98,23 +99,50 @@ html,body{
 }
 #fimages{
     width:100%;
-    min-height:100vh;
-    padding:0vw 15vw;
-    margin-top:5vw;
-    border: 2px solid red;
+    min-height:90vh;
+    padding:0vw 5vw; /* Reduce padding */
+    margin-top: 0; /* Remove margin if unnecessary */
+    /* border: 2px solid red; */
     justify-content: space-between;
     display: flex;
 }
 #fleft{
     width:45%;
     min-height: inherit;
-    border:1px solid blue;
+    overflow:hidden;
+    /* border:1px solid blue; */
 }
 #fright{
     width:45%;
     min-height: inherit;
-    border:1px solid green;
+    /* border:1px solid green; */
+    display: flex;
+    align-items: center;
+    justify-content:center;
 }
 #fright #image{
+    width:90%;
+    height: 80%;
+    background-color: red;
+}
+
+#fleftele{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width:100%;
+    height:inherit;
+}
+#fleftele h1{
+    font-size:2.5vw;    
+    line-height: 1;
+    font-weight: 400;
+    text-transform: capitalize;
+    margin : 2vw 0;
+}
+#fleftele h4{
+    opacity : .5;
+}
+#fleftele h3{
+    font-size:1.2vw;
 }
