@@ -2,12 +2,18 @@
     font-family: 'Nue';
     src: url(./NeueHaasDisplayBlack.ttf);
 }
+@font-face {
+    font-family: 'Nue';
+    src: url(./NeueHaasDisplayBlack.ttf);
+    font-weight: 100;
+}
 
 * {
     margin: 0;
     padding: 0;
     font-family: "Neu";
     box-sizing: border-box;
+    background-color: #efeae3;
 }
 
 html, body {
@@ -40,42 +46,51 @@ nav{
     align-items: center;
     gap: 1vw;
 }
-#nav-part2 h4{
+#nav-part2 h4 {
     padding: 10px 20px;
     border: 1px solid #8a8a8a89;
     border-radius: 50px;
     font-weight: 500;
     position: relative;
-    color: #000000;
     font-size: 18px;
-    color: #fff;
     overflow: hidden;
+    transition: all 0.3s ease;
+    background-color: transparent;  /* Added this */
 }
 
-#nav-part2 h4::after{
+#nav-part2 h4::after {
     content: "";
     position: absolute;
     height: 100%;
     width: 100%;
     background-color: black;
     left: 0;
-    bottom: -100%;
-    border-radius: 50%;
-    transition: all ease 0.3s;
+    top: 0;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
 
+#nav-part2 h4:hover {
+    background-color: black;  /* Added this */
+    border-color: black;     /* Added this */
 }
-#nav-part2 h4:hover::after{
-    bottom: 0;
-    border-radius: 0;
+
+#nav-part2 h4:hover::after {
+    transform: translateY(0);
 }
-#nav-part2 h4 a{
-    color: #000000bb;
+
+#nav-part2 h4 a {
+    color: #000000;
     text-decoration: none;
     position: relative;
-    z-index: 9;
+    z-index: 2;
+    transition: color 0.3s ease;
+    background-color: transparent;  /* Added this */
 }
-#nav-part2 h4:hover a{
-    color: #fff;
+
+#nav-part2 h4:hover a {
+    color: white;
 }
 
 #center{
@@ -180,6 +195,7 @@ nav{
     width: 100%;
     background-color: #efeae3;
     padding: 8vw 0;
+    position: relative;
 }
 
 #moving-text h1{
@@ -207,6 +223,8 @@ nav{
 #moving-text{
     white-space: nowrap;
     overflow-x: hidden;
+    position: relative;
+    z-index: 2;
 }
 #moving-test::-webkit-scrollbar{
     display: none;
@@ -218,4 +236,107 @@ nav{
     to {
         transform: translateX(-100%);
     }
+}
+
+
+#page-bottom{
+    height: 60vh;
+    width: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4.5vw;
+    position: relative;
+    z-index: 2;
+}
+
+#page-bottom h1{
+    font-size: 3vw;
+    width: 50%;
+    line-height: 3vw;
+    margin-top: 5vw;
+    z-index: 9px;
+    margin-bottom:5vw;
+}#bottom-part2 {
+    width: 20vw;
+    background-color: #ebe4d8;
+    border-radius: 20px; 
+}
+
+#bottom-part2 img {
+    width: 100%;
+
+    object-fit: cover;
+    border-radius: 15px; /* Slight curve */
+}
+
+#bottom-part2 p{
+    font-weight: 100;
+    margin-top: 2vw;
+    font-size: 1vw;
+}
+#page2 #gooey {
+    height: 30vw;
+    width: 30vw;
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(to top right, #FE320A, #fe320a);
+    top: 55%;
+    left: 20%;
+    filter: blur(20px);
+    animation-name: gooey;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-out;
+}
+
+@keyframes gooey {
+    from {
+        transform: translate(10%, -10%) skew(0deg);
+    }
+    to {
+        transform: translate(-10%, 10%) skew(5deg);
+    }
+}
+
+
+
+#page3 {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #EFEAE3;
+    padding: 4vw 0;
+}
+
+.elem {
+    height: 150px;
+    width: 100%;
+    position: relative;
+
+    border-bottom: 1px solid #38383864;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 0 2vw;
+}
+
+.elem h2 {
+    font-size: 3vw;
+    position: relative;
+    z-index: 9;
+}
+
+.elem .overlay {
+    height: 100%;
+    width: 100%;
+    background-color: orange;
+    position: absolute;
+    left: 0;
+    top: -100%;
+    transition: all ease 0.25s;
+}
+
+.elem:hover .overlay {
+    top: 0;
 }
